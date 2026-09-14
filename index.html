@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypress Plumbing | Master Plumber & Leak Specialist in Cypress, TX</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1e293b; line-height: 1.6; background-color: #f8fafc; }
+        
+        /* Unified Header Styling */
+        header { background: #0f172a; color: #fff; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        header h2 { font-size: 1.5rem; letter-spacing: 0.5px; }
+        .header-nav { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+        .header-nav a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .header-nav a:hover, .header-nav a.active { color: #38bdf8; }
+        .header-phone { color: #38bdf8; font-weight: bold; text-decoration: none; font-size: 1.05rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.3); }
+        
+        .hero { max-width: 1000px; margin: 2.5rem auto; padding: 2.5rem 2rem; text-align: center; background: #fff; border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
+        .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 0.4rem 1rem; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 20px; margin-bottom: 1.5rem; }
+        
+        h1 { font-size: 2.3rem; color: #0f172a; margin-bottom: 1rem; line-height: 1.2; }
+        .subheadline { font-size: 1.15rem; color: #475569; margin-bottom: 2.5rem; max-width: 750px; margin-left: auto; margin-right: auto; }
+        
+        .top-cta { background: #f0f9ff; border: 2px solid #bae6fd; padding: 1.5rem; border-radius: 8px; text-align: center; margin-bottom: 2.5rem; }
+        .top-cta p { color: #334155; margin-bottom: 1rem; font-weight: 500; font-size: 1.05rem; }
+
+        .nav-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem; text-align: left; }
+        .nav-card { background: #f8fafc; padding: 1.5rem; border-radius: 8px; border: 2px solid #e2e8f0; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        .nav-card:hover { border-color: #0284c7; background: #f0f9ff; transform: translateY(-2px); }
+        .nav-card.full-width { grid-column: span 2; }
+        .nav-card h3 { font-size: 1.2rem; color: #0f172a; margin-bottom: 0.5rem; }
+        .nav-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 1.2rem; }
+        .nav-link-text { color: #0284c7; font-weight: bold; font-size: 0.9rem; }
+
+        .cta-button { display: inline-block; background-color: #0284c7; color: white; padding: 1rem 2.5rem; font-size: 1.15rem; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 14px rgba(2,132,199,0.35); transition: background 0.2s; }
+        .cta-button:hover { background-color: #0369a1; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; align-items: flex-start; }
+            .header-nav { width: 100%; justify-content: space-between; border-top: 1px solid #334155; padding-top: 0.8rem; }
+            .nav-grid { grid-template-columns: 1fr; }
+            .nav-card.full-width { grid-column: span 1; }
+            h1 { font-size: 1.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Cypress Plumbing</h2>
+        <nav class="header-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="leaks.html">Leaks</a>
+            <a href="gas-testing.html">Gas</a>
+            <a href="sewer-repairs.html">Sewer</a>
+            <a href="commercial.html">Commercial</a>
+            <a href="plumbing.html">General</a>
+        </nav>
+        <a href="tel:5551234567" class="header-phone">📞 (555) 123-4567</a>
+    </header>
+
+    <div class="hero">
+        <div class="badge">Licensed Master Plumber & Local Specialist</div>
+        <h1>Master Plumbing Diagnostics & Repairs in Cypress</h1>
+        <p class="subheadline">No dispatch gimmicks or corporate runaround. Just fast, master-level plumbing solutions for homeowners and commercial facilities.</p>
+        
+        <div class="top-cta">
+            <p>Need a master plumber on site today? Call direct for immediate scheduling.</p>
+            <a href="tel:5551234567" class="cta-button">📞 Call Now: (555) 123-4567</a>
+        </div>
+
+        <div class="nav-grid">
+            <a href="leaks.html" class="nav-card">
+                <div>
+                    <h3>💧 Residential Leak Repairs</h3>
+                    <p>Ceiling drips, hidden wet walls, warping floors, or unexplained water bill spikes tracked down and fixed fast.</p>
+                </div>
+                <span class="nav-link-text">View Leak Services &rarr;</span>
+            </a>
+
+            <a href="gas-testing.html" class="nav-card">
+                <div>
+                    <h3>🔥 City-Approved Gas Testing</h3>
+                    <p>CenterPoint-approved gas test permits, utility coordination, and safety compliance checks for commercial facilities.</p>
+                </div>
+                <span class="nav-link-text">View Gas Testing &rarr;</span>
+            </a>
+
+            <a href="sewer-repairs.html" class="nav-card">
+                <div>
+                    <h3>🧱 Sub-Slab & Main Sewer Replacements</h3>
+                    <p>Foundation drain pipe repairs and main sewer line replacements running from your house out to the city municipal main.</p>
+                </div>
+                <span class="nav-link-text">View Sewer & Slab Services &rarr;</span>
+            </a>
+
+            <a href="commercial.html" class="nav-card">
+                <div>
+                    <h3>🏢 Lite-Commercial & Facilities</h3>
+                    <p>Reliable plumbing service and code compliance checks for small local businesses, daycares, and office properties.</p>
+                </div>
+                <span class="nav-link-text">View Commercial Services &rarr;</span>
+            </a>
+
+            <a href="plumbing.html" class="nav-card full-width">
+                <div>
+                    <h3>🔧 General Plumbing & Repairs</h3>
+                    <p>Water heaters, drain clearings, fixture replacements, and everyday master plumbing maintenance.</p>
+                </div>
+                <span class="nav-link-text">View General Repairs &rarr;</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

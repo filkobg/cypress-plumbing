@@ -43,25 +43,63 @@
             .nav-card.full-width { grid-column: span 1; }
             h1 { font-size: 1.9rem; }
         }
-    </style>
+    <style>
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+    }
+    .logo img {
+        height: 40px;
+        width: auto;
+    }
+    .brand-text {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .header-phone {
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: inherit;
+    }
+    .header-nav {
+        width: 100%;
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+    }
+</style>
 </head>
 <body>
 
     <header>
-       <a href="index.html" class="logo">
+    <a href="index.html" class="logo">
         <img src="images/logo.webp" alt="Cypress Plumbing Logo" width="40" height="40">
-        <h2>Cypress Plumbing</h2>
+        <span class="brand-text">Cypress Plumbing</span>
     </a>
-        <nav class="header-nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="leaks.html">Leaks</a>
-            <a href="gas-testing.html">Gas</a>
-            <a href="sewer-repairs.html">Sewer</a>
-            <a href="commercial.html">Commercial</a>
-            <a href="plumbing.html">General</a>
-        </nav>
-        <a href="tel:3462809028" class="header-phone">📞 (346) 280-9028</a>
-    </header>
+    
+    <a href="tel:3462809028" class="header-phone">📞 (346) 280-9028</a>
+
+    <nav class="header-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="leaks.html">Leaks</a>
+        <a href="gas-testing.html">Gas</a>
+        <a href="sewer-repairs.html">Sewer</a>
+        <a href="commercial.html">Commercial</a>
+        <a href="plumbing.html">General</a>
+    </nav>
+</header>
 
     <div class="hero">
         <div class="badge">Licensed Master Plumber & Local Specialist</div>

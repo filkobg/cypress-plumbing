@@ -312,7 +312,7 @@
             switchStep(1);
         }
 
-        // Handle final form submit -> Format WhatsApp Message
+        // Handle final form submit -> Format SMS text message
         document.getElementById('waterHeaterEstimator').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -325,20 +325,19 @@
             const capacity = document.querySelector('input[name="capacity"]:checked').value;
             const code = document.querySelector('input[name="code"]:checked').value;
 
-            // Build the WhatsApp message text
-            const message = `Hello Cypress Plumbing, I would like an on-site water heater estimate.%0A%0A` +
-                            `*Name:* ${name}%0A` +
-                            `*Phone:* ${phone}%0A` +
-                            `*Address:* ${address}%0A` +
-                            `*Location:* ${location}%0A` +
-                            `*Fuel Type:* ${fuel}%0A` +
-                            `*Capacity:* ${capacity}%0A` +
-                            `*Up to code:* ${code}`;
+            // Build the SMS message text
+            const message = `Water Heater Estimate Request:\n` +
+                            `Name: ${name}\n` +
+                            `Phone: ${phone}\n` +
+                            `Address: ${address}\n` +
+                            `Location: ${location}\n` +
+                            `Fuel: ${fuel}\n` +
+                            `Capacity: ${capacity}\n` +
+                            `Code compliant: ${code}`;
 
-            // Your WhatsApp phone number (using your business number with country code 1 for US)
-            const whatsappNumber = "13462809028";
+            const businessPhone = "3462809028";
 
-            // Open WhatsApp with pre-filled message
-            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            // Open native SMS app with pre-filled message
+            window.location.href = `sms:${businessPhone}?body=${encodeURIComponent(message)}`;
         });
     </script>

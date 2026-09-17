@@ -249,8 +249,7 @@
         </div>
     </div>
 
-    <!-- PASTE THE SCRIPT RIGHT HERE -->
-    <script>
+   <script>
         let currentStepId = 1;
         const steps = {
             1: document.getElementById('step-1'),
@@ -313,15 +312,33 @@
             switchStep(1);
         }
 
+        // Handle final form submit -> Format WhatsApp Message
         document.getElementById('waterHeaterEstimator').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const name = document.getElementById('clientName').value;
             const phone = document.getElementById('clientPhone').value;
             const address = document.getElementById('clientAddress').value;
             
-            alert(`Thanks ${name}! Your on-site estimate request for ${address} has been received. We will call you at ${phone} shortly.`);
-            resetEstimator();
+            const location = document.querySelector('input[name="location"]:checked').value;
+            const fuel = document.querySelector('input[name="fuel"]:checked').value;
+            const capacity = document.querySelector('input[name="capacity"]:checked').value;
+            const code = document.querySelector('input[name="code"]:checked').value;
+
+            // Build the WhatsApp message text
+            const message = `Hello Cypress Plumbing, I would like an on-site water heater estimate.%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Address:* ${address}%0A` +
+                            `*Location:* ${location}%0A` +
+                            `*Fuel Type:* ${fuel}%0A` +
+                            `*Capacity:* ${capacity}%0A` +
+                            `*Up to code:* ${code}`;
+
+            // Your WhatsApp phone number (using your business number with country code 1 for US)
+            const whatsappNumber = "13462809028";
+
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
         });
     </script>
-</body>
-</html>

@@ -144,6 +144,15 @@
 }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2T8CPG84N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P2T8CPG84N');
+</script>
 <body>
 <script type="application/ld+json">
 {
@@ -439,6 +448,38 @@
             document.getElementById('waterHeaterEstimator').reset();
             switchStep(1);
         }
+        document.getElementById('waterHeaterEstimator').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Send event to Google Analytics
+    if (typeof gtag === 'function') {
+        gtag('event', 'estimator_submission', {
+            'event_category': 'Leads',
+            'event_label': 'Water Heater SMS'
+        });
+    }
+
+    const name = document.getElementById('clientName').value;
+    const phone = document.getElementById('clientPhone').value;
+    const address = document.getElementById('clientAddress').value;
+    
+    const location = document.querySelector('input[name="location"]:checked').value;
+    const fuel = document.querySelector('input[name="fuel"]:checked').value;
+    const capacity = document.querySelector('input[name="capacity"]:checked').value;
+    const code = document.querySelector('input[name="code"]:checked').value;
+
+    const message = `Water Heater Estimate Request:\n` +
+                    `Name: ${name}\n` +
+                    `Phone: ${phone}\n` +
+                    `Address: ${address}\n` +
+                    `Location: ${location}\n` +
+                    `Fuel: ${fuel}\n` +
+                    `Capacity: ${capacity}\n` +
+                    `Code compliant: ${code}`;
+
+    const businessPhone = "3462809028";
+    window.location.href = `sms:${businessPhone}?body=${encodeURIComponent(message)}`;
+});
 
         // Handle final form submit -> Format SMS text message
         document.getElementById('waterHeaterEstimator').addEventListener('submit', function(e) {

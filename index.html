@@ -79,6 +79,45 @@
         gap: 1.5rem;
         margin-top: 0.5rem;
     }
+    .bottom-licensing-banner {
+    background-color: #002244;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-top: 3px solid #0066cc;
+    width: 100%;
+}
+
+.bottom-licensing-banner .banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.bottom-licensing-banner a {
+    color: #3399ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bottom-licensing-banner a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .banner-separator {
+        display: none;
+    }
+    .bottom-licensing-banner .banner-content {
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+}
 </style>
 </head>
 <body>
@@ -253,6 +292,15 @@
             If you don't see your area listed, a trip fee may apply. Give us a call at <a href="tel:3462809028" style="color: #0066cc; text-decoration: none; font-weight: bold;">(346) 280-9028</a> to check our availability in your area.
         </p>
     </div>
+    <div class="bottom-licensing-banner">
+    <div class="banner-content">
+        <span><strong>Cypress Plumbing</strong> | Master Plumber License #47528</span>
+        <span class="banner-separator">•</span>
+        <span> 9756 Whithorn Dr, Suite A1, Houston, TX 77095</span>
+        <span class="banner-separator">•</span>
+        <span> <a href="tel:3462809028">(346) 280-9028</a></span>
+    </div>
+</div>
 </section>
 </body>
 </html>
